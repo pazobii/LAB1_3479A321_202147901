@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage>
     setState(() //avisa q el widget cambió y debe reconstruirse
     {
       _counter++;
-      print('setState incrementado el contadoooor $_counter'); // el setState causa que el widget se vuelva a construir
+      print('contadoooor $_counter'); // el setState causa que el widget se vuelva a construir (se incrementa el contador)
     });
   }
 
