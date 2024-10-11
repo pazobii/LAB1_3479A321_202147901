@@ -6,11 +6,13 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget 
+{
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -22,28 +24,34 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget 
+{
   final String title;
 
   const MyHomePage({super.key, required this.title});
 
   @override
-  State<MyHomePage> createState() {
+  State<MyHomePage> createState() 
+  {
     return _MyHomePageState();
   }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> 
+{
   int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
+  void _incrementCounter() 
+  {
+    setState(() 
+    {
       _counter++;
     });
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -66,7 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               title: Text('Detalle'),
-              onTap: () {
+              onTap: () 
+              {
                 // Navegar a la pantalla de Detalle
                 Navigator.push(
                   context,
@@ -118,32 +127,70 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// Auditoría Pantalla
-class AuditoriaPantalla extends StatelessWidget {
+// PANTALLA AUDITORIA + LISTA D ITEMS
+class AuditoriaPantalla extends StatelessWidget 
+{
   const AuditoriaPantalla({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Auditoría'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('Historial de acceso del usuario'),
-            const SizedBox(height: 20),
-            // Aquí podrías mostrar la lista de accesos, por ejemplo
-            ElevatedButton(
-              onPressed: () {
-                // Agrega aquí la lógica para manejar el acceso
-                print('Acceso registrado');
-              },
-              child: const Text('Registrar Acceso'),
-            ),
-          ],
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); // Regresar a la pantalla anterior
+          },
         ),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(8),
+        children: <Widget>[
+          ListTile(
+            title: const Text('Item 1'),
+            onTap: () 
+            {
+              print('Item 1 seleccionado'); // seleccionar el item 1
+            },
+          ),
+          ListTile(
+            title: const Text('Item 2'),
+            onTap: () 
+            {
+              print('Item 2 seleccionado'); // seleccionar el item 2
+            },
+          ),
+          ListTile(
+            title: const Text('Item 3'),
+            onTap: () 
+            {
+              print('Item 3 seleccionado');// seleccionar el item 3
+            },
+          ),
+          ListTile(
+            title: const Text('Item 4'),
+            onTap: () 
+            {
+              print('Item 4 seleccionado');// seleccionar el item 4
+            },
+          ),
+          ListTile(
+            title: const Text('Item 5'),
+            onTap: () 
+            {
+              print('Item 5 seleccionado');// seleccionar el item 5
+            },
+          ),
+          ListTile(
+            title: const Text('Item 6'),
+            onTap: () 
+            {
+              print('Item 6 seleccionado');// seleccionar el item 6
+            },
+          ),
+        ],
       ),
     );
   }
